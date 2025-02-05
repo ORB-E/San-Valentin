@@ -1,0 +1,169 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    background-image: url("../Img/hearts.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100vh;
+}
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+.navbar ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+.navbar li {
+    float: left;
+}
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.title {
+    margin: 20px;
+    text-align: center;
+    font-family: cursive;
+    font-size: 24px;
+    color: white;
+}
+.title:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: changeColor 2s infinite alternate;
+}
+.buttons {
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+/* Botón Sí */
+.buttonYes {
+    width: 75%;
+    height: 40px;
+    /* Altura inicial */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+/* Botón No */
+.buttonNo {
+    width: 75%;
+    height: 40px;
+    /* Altura inicial */
+    background-color: #b31b1b;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+/* Responsivo para móviles */
+@media (max-width: 480px) {
+    .buttons {
+        width: 90%;
+        padding: 10px;
+    }
+    .buttonYes,
+    .buttonNo {
+        width: 100%;
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}
+/* Animacion de cambio de color al tittle 8 colores*/
+@keyframes changeColor {
+    0% {
+        color: #ff0000;
+    }
+    25% {
+        color: #ff7f00;
+    }
+    50% {
+        color: #ffff00;
+    }
+    75% {
+        color: #00ff00;
+    }
+    100% {
+        color: #0000ff;
+    }
+}
+
+main {
+    background-image: url('../img/hearts.png');
+    background-size: 150px;
+    height: 100vh;
+}
+body {
+    background-color: black;
+}
+.gifs {
+    position: relative;
+    width: 300px; /* Ajusta según el tamaño de tus GIFs */
+    height: 300px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.gifs img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: changeGif 12s infinite;
+}
+
+.gifs img:nth-child(1) {
+    animation-delay: 0s;
+}
+.gifs img:nth-child(2) {
+    animation-delay: 4s;
+}
+.gifs img:nth-child(3) {
+    animation-delay: 8s;
+}
+
+@keyframes changeGif {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+    }
+    34% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,144 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    background-image: url("../img/hearts.png");
+    background-size: 200px;
+}
+
+h1 {
+    color: white;
+    font-family: cursive;
+    margin-bottom: 2%;
+}
+
+/* Estilos para el corazón */
+.heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(-45deg);
+    margin: 20px;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+/* Contenedor para los GIFs */
+.gifs {
+    position: relative;
+    width: 300px;  /* Ajusta este valor según el tamaño deseado */
+    height: 300px;
+    margin: 20px;
+}
+
+/* Los GIFs se posicionan en forma absoluta para superponerse */
+.gifs img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: changeGif 12s infinite;
+}
+
+.gifs img:nth-child(1) {
+    animation-delay: 0s;
+}
+.gifs img:nth-child(2) {
+    animation-delay: 4s;
+}
+.gifs img:nth-child(3) {
+    animation-delay: 8s;
+}
+
+/* Animación para mostrar y ocultar los GIFs */
+@keyframes changeGif {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+    }
+    34% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Contenedor complement para alinear el corazón y los GIFs */
+.complement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media query para móviles */
+@media (max-width: 480px) {
+  main {
+    background-size: 100px;  /* Reduce el tamaño de la imagen de fondo */
+  }
+  
+  .complement {
+    flex-direction: column;  /* Apila el corazón y los GIFs verticalmente */
+  }
+  
+  .heart {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+  }
+  
+  .heart::before,
+  .heart::after {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .heart::before {
+    top: -35px;
+  }
+  
+  .heart::after {
+    left: 35px;
+  }
+  
+  .gifs {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+  }
+}
